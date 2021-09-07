@@ -1,8 +1,9 @@
 import React from 'react'
+import "../css/about.css"
 
 function About() {
 	return (
-		<div>
+		<div className="about">
 			<div>
 				<label>이름</label>
 				<span>Nana</span>
