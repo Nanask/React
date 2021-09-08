@@ -1,7 +1,7 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .App {
   text-align: center;
@@ -21,26 +21,25 @@
   }
 }
 
-
 .App-header {
-	background-color: #282c34;
-	min-height: 30vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+  background-color: #282c34;
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 
-	width: 100vw;
-	/* background-image: url("./image/background.png"); */
-	background-repeat: no-repeat;
-	background-attachment: scroll;
-	background-position: center;
-	background-size: cover;
+  width: 100vw;
+  background-image: url("./image/image.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
 
-	text-shadow: 2px 2px 2px black;
-  }
+  text-shadow: 2px 2px 2px black;
+}
 
 .App-link {
   color: #61dafb;
@@ -56,51 +55,50 @@
 }
 
 section.main_section {
-	flex: 1;
-	width: 95%;
-	margin: 10px auto;
-	border: 1px solid blue;
+  flex: 1;
+  width: 95%;
+  margin: 10px auto;
+  border: 1px solid blue;
 }
 
 footer {
-	background-color: black;
-	color: white;
-	padding: 0.7rem;
+  background-color: black;
+  color: white;
+  padding: 0.7rem;
 }
 
 table.rem_list {
-	width: 95%;
-	margin: 20px auto;
-	border-collapse: collapse;
-	border-spacing: 0;
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 table.rem_list tr:nth-of-type(odd) {
-	background-color: #ddd;
+  background-color: #ddd;
 }
 table.rem_list tr:nth-of-type(even) {
-	background-color: #eee;
+  background-color: #eee;
 }
-
 
 table.rem_list th,
 table.rem_list td {
-	padding: 8px;
-	cursor: pointer;
+  padding: 8px;
+  cursor: pointer;
 }
 
 table.rem_list tr:last-child {
-	font-weight: bold;
-	color: blue;
+  font-weight: bold;
+  color: blue;
 }
 
 table.rem_list tr.comp {
-	text-decoration-line: line-through;
+  text-decoration-line: line-through;
 }
 
 input[name="r_remember"] {
-	width: 100%;
-	padding: 1rem;
-	height: 100%;
-	margin: 0;
+  width: 100%;
+  padding: 1rem;
+  height: 100%;
+  margin: 0;
 }
