@@ -13,14 +13,16 @@
 <script>
 	const b_name = document.querySelector("input[name='b_name'")
 	b_name.addEventListener("change", (e) =>{
+		// 전개 연산자!!
 		// const name = e.target.name
 		// const value = e.target.value;
 		const {name, value} = e.target;
 
-		// const jData = { [name] : value}
+		// const jData = { name : value}
+		//{}는 대입되는 값을 보여주는 것 !!!!, name에는 b_name이라는 값을 담고 있음
 		const jData = { [name] : value };
 		console.log(jData.name)
-		console.log(jData.b_name);
+		console.log(jData.b_name); // 정상코드
 	})
 </script>
 </html>
