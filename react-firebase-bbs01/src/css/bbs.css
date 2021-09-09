@@ -1,0 +1,55 @@
+table.bbs_list {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table.bbs_list tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+table.bbs_list th,
+table.bbs_list td {
+  padding: 8px;
+}
+
+table.bbs_list th {
+  color: blue;
+}
+
+div.bbs_write {
+  width: 90%;
+  margin: 10px auto;
+}
+
+div.bbs_write input {
+  display: inline-block;
+  width: 80%;
+  padding: 8px;
+  margin: 5px auto;
+  border: none;
+  outline: none;
+}
+
+div.bbs_write input:hover {
+  background-color: #ddd;
+}
+
+div.bbs_write input:hover {
+  background-color: #eee;
+}
+
+div.bbs_write button {
+  background-color: blue;
+  color: white;
+  width: 80%;
+  margin: 5px auto;
+  outline: none;
+  border: none;
+}
+
+div.bbs_write button:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0.7, 0);
+}
