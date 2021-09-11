@@ -4,6 +4,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { BBsMain, Header, MainNav, Footer } from "./comps";
 import { BBsWrite } from "./comps";
+import { BBsDetail } from "./comps";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <section className="main_section">
           <Route path="/" component={BBsMain} exact />
           <Route path="/writer" component={BBsWrite} />
+		  <Route path="/detail/:id" component={BBsDetail} />
           {/* <BBsMain /> */}
         </section>
         <Footer />
