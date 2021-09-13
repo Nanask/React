@@ -1,14 +1,9 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 30vmin;
+  height: 40vmin;
   pointer-events: none;
 }
 
@@ -40,4 +35,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+td {
+  cursor: pointer;
+}
+
+footer {
+  background-color: #ddd;
+  text-align: center;
+  padding: 10px;
 }
