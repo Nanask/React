@@ -25,7 +25,7 @@ router.get("/data", async (req, res) => {
   // 전체데이터 가져와서
   const result = await BUCKET.find({});
   // json 방식으로 리턴하기
-  res.json(bucketList);
+  await res.json(result);
 });
 
 module.exports = router;

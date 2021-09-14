@@ -3,6 +3,13 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+/**
+ * CROSS ORIGIN RESOURCE SHARE
+ * 서로 다른 서버간의 데이터를 주고 받을 때 보안문제로 인해
+ * 발생할 수 있는 ISSUE
+ *
+ * XSS 공격
+ */
 const cors = require("cors");
 const mongoose = require("mongoose");
 
@@ -25,8 +32,20 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
 var app = express();
+
+// CORS를 허용할 Origin List
+const whiteList = ["http://localhost:5000", "http://localhost:4000"];
+
+// origin에 해당하는 list가 있으면 허용할 List에 넣어주기
+const corsOption = {
+  orogin: (origin, callback) => {
+    const isWhiteList = whiteList.indexOf(origin) !== -1;
+    callback(null, isWhiteList);
+  },
+  credentials: true,
+};
 // midelware 연결해주기
-app.use(cors());
+app.use(cors(corsOption));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

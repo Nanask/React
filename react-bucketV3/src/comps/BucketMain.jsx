@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import BucketList from "./BucketList";
 import BucketInput from "./BucketInput";
 import uuid from "react-uuid";
@@ -33,7 +33,7 @@ function BucketMain() {
     const bucket = await res.json();
     console.log(bucket);
     // setBucketList를 랜더링하여 보여주기
-    await setBuckList([bucketList]);
+    await setBuckList(bucket);
   }, []);
 
   useEffect(bucketFetch, [bucketFetch]);
