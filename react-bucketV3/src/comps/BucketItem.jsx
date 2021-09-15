@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { useState } from "react";
 
 const b_flag_text = ["일반", "중요", "매우중요", "긴급"];
@@ -19,9 +20,14 @@ function BucketItem({ args, bucket }) {
     const itemTr = e.currentTarget;
     const b_id = itemTr.dataset.id;
     const itemTd = e.target;
+    // b_id = e.target.closest("TR").dataset.id;
+
     if (itemTd.tagName === "TD") {
       const className = itemTd.className;
+      // flag가 클릭됐을때
       if (className.includes("b_flag")) {
+        // b_flag값만 +1해서 넘겨주기?, 상태값이 아니기때문에 변경해도 상관없음
+
         flag_change(b_id);
       } else if (className.includes("b_title")) {
         // input box가 나타나는 코드

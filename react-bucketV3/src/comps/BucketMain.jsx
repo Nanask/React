@@ -27,9 +27,12 @@ function BucketMain() {
     //   b_cancel: false,
     // },
   ]);
+  // 비어있는 객체를 만들기
+  // db에 update할 state
+  const [saveBucket, setSaveBucket] = useState({});
 
   const bucketFetch = useCallback(async () => {
-    const res = await fetch("http://localhost:5000/data");
+    const res = await fetch("http://localhost:5000/api/get");
     const bucket = await res.json();
     console.log(bucket);
     // setBucketList를 랜더링하여 보여주기
@@ -48,6 +51,7 @@ function BucketMain() {
       b_end_check: false,
       b_cencel: false,
     };
+    // 화면에 보여질 리스트에 추가하기
     // 원래있던 bucketList에 새로운 bucket을 추가하기
     await setBuckList([...bucketList, bucket]);
 
@@ -58,9 +62,25 @@ function BucketMain() {
       },
       body: JSON.stringify(bucket),
     };
-    await fetch("http://localhost:5000/insert", fetch_option);
+    await fetch("http://localhost:5000/api/bucket", fetch_option);
     await bucketFetch();
   };
+  // 각각의 항목들이 업데이트 될때마다 변경이 되야 하기 때문에
+  // state를 만들어 전송해주는 방식으로 해결
+  const putBucket = async () => {
+    console.log(saveBucket);
+    const putFetchOption = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(saveBucket),
+    };
+    // put방식으로 데이터가 전송됨
+    const result = await fetch("http://localhost:5000/api/bucket", putFetchOption);
+    console.log(result);
+  };
+  // saveBucket이 세팅되면 작동되는 코드?
+  useEffect(putBucket, [saveBucket]);
+
   // 클릭된 것이 무엇인지 알려주기 위해 id를 매개변수로 받는다.
   const flag_change = (id) => {
     // 리스트에서 input_box 항목을 클릭하면 실행 할 함수
@@ -68,10 +88,15 @@ function BucketMain() {
     // const bucket_update = (id, title);
     const _bucketList = bucketList.map((bucket) => {
       if (bucket.b_id === id) {
+        const _temp = { ...bucket, b_flag: bucket.b_flag + 1 };
+        // setSaveBucket();
+        setSaveBucket(_temp);
+        // return saveBucket;
+        return _temp;
         /**
          * 전달받은 id와 같은 항목의 flag를 1 증가시키기
          */
-        return { ...bucket, b_flag: bucket.b_flag + 1 };
+        // return {};
       } else {
         return bucket;
       }
@@ -95,7 +120,12 @@ function BucketMain() {
       if (bucket.b_id === id) {
         // b_id가 id값과 같으면
         // bucket에 담긴 항목중에서 b_title 항목만 변경하여 통째로 return
-        return { ...bucket, b_title: title };
+        const _temp = { ...bucket, b_title: title };
+        setSaveBucket(_temp);
+        // setSaveBucket({ ...bucket, b_title: title });
+        // return { ...bucket, b_title: title };
+        // return saveBucket;
+        return _temp;
       } else {
         // b_id가 id와 같지 않으면
         // 아무것도 변경없이 bucket을 그대로 return
@@ -133,11 +163,16 @@ function BucketMain() {
   const bucket_cencel = (id) => {
     const _complete = bucketList.map((bucket) => {
       if (bucket.b_id === id) {
-        return {
-          ...bucket,
-          // b_end_check: true,
-          b_cencel: !bucket.b_cencel,
-        };
+        const _temp = { ...bucket, b_cencel: !bucket.b_cencel };
+        // setSaveBucket({ ...bucket, b_cencel: !bucket.b_cencel });
+        // return saveBucket;
+        setSaveBucket(_temp);
+        return _temp;
+        // return {
+        //   ...bucket,
+        //   // b_end_check: true,
+        //   b_cencel: !bucket.b_cencel,
+        // };
       } else {
         return bucket;
       }
@@ -148,12 +183,17 @@ function BucketMain() {
   const bucket_complete = (id) => {
     const _complete = bucketList.map((bucket) => {
       if (bucket.b_id === id) {
-        return {
-          ...bucket,
-          b_end_date: moment().format("YYYY[-]MM[-]DD HH:mm:ss"),
-          // bucket.b_end_date ||
-          b_end_check: !bucket.b_end_check,
-        };
+        const _temp = { ...bucket, b_end_date: moment().format("YYYY[-]MM[-]DD HH:mm:ss"), b_end_check: !bucket.b_end_check };
+        // setSaveBucket({ ...bucket, b_end_date: moment().format("YYYY[-]MM[-]DD HH:mm:ss"), b_end_check: !bucket.b_end_check });
+        setSaveBucket(_temp);
+        return _temp;
+        // return saveBucket;
+        // return {
+        //   ...bucket,
+        //   b_end_date: moment().format("YYYY[-]MM[-]DD HH:mm:ss"),
+        //   // bucket.b_end_date ||
+        //   b_end_check: !bucket.b_end_check,
+        // };
       } else {
         return bucket;
       }
