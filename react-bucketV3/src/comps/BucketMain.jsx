@@ -78,7 +78,7 @@ function BucketMain() {
     const result = await fetch("http://localhost:5000/api/bucket", putFetchOption);
     console.log(result);
   };
-  // saveBucket이 세팅되면 작동되는 코드?
+  // saveBucket이 변경될 때마다 putBucket을 실행하라
   useEffect(putBucket, [saveBucket]);
 
   // 클릭된 것이 무엇인지 알려주기 위해 id를 매개변수로 받는다.
