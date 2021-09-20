@@ -1,25 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Board from './comps/Board';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-		<div className="box_row">
-			<button></button>
-			<button></button>
-			<button></button>
-		</div>
-		<div className="box_row">
-			<button></button>
-			<button></button>
-			<button></button>
-		</div>
-		<div className="box_row">
-			<button></button>
-			<button></button>
-			<button></button>
-		</div>
+		<Board />
       </header>
     </div>
   );
