@@ -1,24 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+import {RenderSquare} from "../modules/main.jsx"
 
 
 
-function board() {
+function Board() {
 
-const array = [
-	[0,0,0],
-	[0,0,0],
-	[0,0,0]
-]
+	const [square, setsqure] = useState(Array(9).fill("A"));
 
-const box = array.map((sub_btn)=> {
-	const box_cols = sub_btn.map(()=> {
+	return (
+		<div>
+			<RenderSquare square={square}/> 
+		</div>
+	)
 
-		return <button></button>
-
-	})
-	return <div className="box_row">{box_cols}</div>
-})
-	return <div>{box}</div>
 }
 
-export default board
+export default Board
