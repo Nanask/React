@@ -31,6 +31,7 @@ function BookView() {
     <div className="book_view" style={viewStyle}>
       <p style={pStyle}>도서명 : {book.b_name} </p>
       <p style={pStyle}>장르 : {book.b_genre}</p>
+      <p style={pStyle}>장르 : {book.b_genre}</p>
     </div>
   );
 }

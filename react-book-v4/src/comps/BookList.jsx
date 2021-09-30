@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import BookContext from "../context/BookContext";
 import { useBookContext } from "../context/AppContextProvider";
 import BookItem from "./BookItem";
-// import "../css/BookList.css";
+import "../css/BookList.css";
 
 // const list_title_names = ["ID", "도서명", "장르"];
 // const list_title_view = list_title_names.map((title) => {

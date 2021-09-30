@@ -52,8 +52,8 @@ export const useBookContext = () => {
 function AppContextProvider({ children }) {
   const [book, setBook] = useState({
     b_id: 0,
-    b_name: "자바야 놀자",
-    b_genre: "IT 개발서",
+    b_name: "",
+    b_genre: "",
   });
 
   const [bookList, setBookList] = useState([]);

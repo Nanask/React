@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
+
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+div.input_box {
+  /* border: 1px solid black; */
+  padding: 1rem;
+}
+
+div.input_box input,
+div.input_box button {
+  outline: none;
+  border: none;
+}
+
+div.input_box input {
+  width: 30vw;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+}
+
+.rainbow {
+  background-color: #343a40;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 7px 30px;
+}
+
+.rainbow:hover {
+  background-image: linear-gradient(
+    to right,
+    #e7484f,
+    #e7484f 16.65%,
+    #f68b1d 16.65%,
+    #f68b1d 33.3%,
+    #fced00 33.3%,
+    #fced00 49.95%,
+    #009e4f 49.95%,
+    #009e4f 66.6%,
+    #00aac3 66.6%,
+    #00aac3 83.25%,
+    #732982 83.25%,
+    #732982 100%,
+    #e7484f 100%
+  );
+  animation: slidebg 3s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}
+
+div.input_box button {
+  padding: 10px;
+  margin-left: 20px;
+}
