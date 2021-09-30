@@ -1,0 +1,48 @@
+div.input_box {
+  width: 80vw;
+  border: 1px solid #ddd;
+  margin: 20px auto;
+  padding: 0.7rem;
+}
+
+div.text {
+  display: flex;
+}
+
+label,
+input {
+  display: block;
+  display: inline-block;
+  padding: 8px;
+  margin: 5px auto;
+}
+
+div.input_box label {
+  text-align: left;
+  color: blue;
+  font-weight: bold;
+  width: 20%;
+  text-align: center;
+}
+
+div.input_box input {
+  width: 70%;
+}
+
+/* div.input_box button {
+  background-color: blue;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  border: none;
+  padding: 20px;
+} */
+/* 
+label {
+  width: 30%;
+}
+
+/* 100%로 맞추면 크기가 맞지 않아서 두줄로 나타날 수도 있음 */
+/* input {
+  width: 60%;
+} */

@@ -3,6 +3,8 @@ import { Route } from "react-router-dom";
 import BookContext from "../context/BookContext";
 import BookInput from "./BookInput";
 import BookView from "./BookView";
+import BookList from "./BookList";
+import UUID from "react-uuid";
 
 /**
  * 컴포넌트의 선택적 Rendering
@@ -15,7 +17,13 @@ function BookMain() {
     b_genre: "IT 개발서",
   });
 
-  const providerData = { book, setBook };
+  const onClick = (e) => {
+    alert("여기는 onClick");
+  };
+
+  const [bookList, setBookList] = useState([]);
+
+  const providerData = { book, setBook, bookList, setBookList, onClick };
 
   return (
     // 와... 제일 바깥쪽 tag는 이름을 지워도 된대...
@@ -31,7 +39,7 @@ function BookMain() {
           {/* 위코드처럼 사용하면 두가지의 컴포넌트를 합성하여 다시 화면을 보여준다. */}
         </Route>
         <Route path="/list" exact>
-          여기는 리스트 보이기
+          <BookList />
         </Route>
       </BookContext.Provider>
     </>

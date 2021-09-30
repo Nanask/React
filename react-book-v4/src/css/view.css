@@ -1,0 +1,14 @@
+div.box {
+  display: flex;
+  border: 1px solid #ddd;
+  width: 80%;
+  margin: 20px auto;
+}
+
+div.box div {
+  border: 1px solid;
+  flex: 1;
+  width: 30%;
+  margin: 20px;
+  padding: 1rem;
+}

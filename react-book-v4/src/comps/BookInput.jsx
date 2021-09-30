@@ -2,12 +2,15 @@ import React, { useContext } from "react";
 // import "../css/Insert.css";
 import "../css/BookInput.css";
 import BookView from "./BookView";
-import BookContext from "../context/BookContext";
+// import BookContext from "../context/BookContext";
+import { useBookContext } from "../context/AppContextProvider";
 import MyButton from "../My/MyButton";
 import UUID from "react-uuid";
 
 function BookInput() {
-  const { book, setBook, bookList, setBookList } = useContext(BookContext);
+  // const { book, setBook, bookList, setBookList } = useContext(BookContext);
+  const { book, setBook, bookList, setBookList } = useBookContext();
+  // 매개변수를 따로 사용하지 않고
 
   const onChangeHandler = (e) => {
     const { name, value } = e.target;
@@ -22,7 +25,7 @@ function BookInput() {
   // 바깥쪽 함수에 async 키워드 추가
   // 내부에서 순서를 지켜야 할 함수들에 await 추가
   const bookInsert = async () => {
-    await setBook({ book, b_id: UUID() });
+    await setBook({ ...book, b_id: UUID() });
     await setBookList([...bookList, book]);
   };
   return (
