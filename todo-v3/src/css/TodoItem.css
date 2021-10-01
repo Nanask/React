@@ -1,0 +1,33 @@
+.todo_item {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+  /* 글자를 클릭하면 틀이 감싸지지 않게 막는것 */
+  user-select: none;
+}
+
+.todo_item:hover {
+  background-color: #ddd;
+}
+
+.todo_delete {
+  margin: 1rem;
+  color: #e64080;
+  font-weight: 600;
+  opacity: 0;
+}
+/* todo item에 마우스가 hover되면 delete 버튼이 보이게 하기*/
+.todo_item:hover .todo_delete {
+  opacity: 1;
+}
+
+.todo_text {
+  flex: 1;
+}
+
+.checked {
+  text-decoration-line: line-through;
+  color: #adb5bd;
+}

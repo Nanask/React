@@ -1,5 +1,5 @@
 import React from "react";
-import { useTodoContext } from "../context/AppContextProvider";
+import { useContext } from "../context/AppContextProvider";
 import TodoItem from "./TodoItem";
 
 function TodoList() {
