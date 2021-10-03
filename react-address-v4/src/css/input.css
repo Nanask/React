@@ -1,0 +1,51 @@
+.input_box {
+	/* background-color: yellow; */
+	width: 70vw;
+	margin: 20px auto;	
+	border : 1px solid #ccc;
+	padding: 15px;
+}
+
+.input_box input,
+.input_box button {
+	
+	outline: none;
+	border: none;
+}
+
+.input_box label,
+.input_box input
+ {
+	display: inline-block;
+	margin: 10px;
+
+}
+
+.input_box input {
+	padding: 0.5rem;
+	width: 40vw;
+	border-bottom: 2px solid black;
+
+}
+
+.input_box label {
+	padding: 0.5rem;
+	width: 7vw;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: right;
+
+}
+
+.btn_save {
+	display: block;
+	padding: 1rem;
+	/* margin-left: auto; */
+	margin: auto;
+	background-color: black;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+
+}
+

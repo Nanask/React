@@ -1,0 +1,20 @@
+.list_box {
+
+	width: 70vw;
+	margin: 10px auto;
+	border: 1px solid #ddd;
+	border-spacing: none;
+	border-collapse: separate;
+	
+}
+
+.list_box th,
+.list_box td {
+	border: 1px solid #eee;
+	
+}
+
+.list_box th {
+	background-color: #ddd;
+}
+

@@ -1,0 +1,16 @@
+.main_nav {
+	display: flex;
+	background-color: black;
+	color: white;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 1rem;
+	justify-content: space-evenly;
+	justify-items: center;
+	
+}
+
+ul.main_nav li {
+	padding: 1rem;
+	margin: 10px;
+}
