@@ -6,6 +6,7 @@ import { AddressInput } from './comps/AddressInput';
 import { AddressList } from './comps/AddressList';
 import { MainNav } from './comps/MainNav';
 import { Route } from 'react-router-dom'
+import { AddressMainBody } from './comps/AddressMainBody';
 
 
 function App() {
@@ -16,16 +17,28 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <MainNav/>
-        <Route path="/" exact>
-        <AddressMain>    
-          {/* <Route path="/insert" component={AddressInput} exact> */}
-            <AddressInput/>
-          {/* </Route> */}
-          {/* <Route path="/list" component={AddressList} exact> */}
-            <AddressList/>
-        {/* </Route> */}
-        </AddressMain> 
-        </Route>    
+      <AddressMain>
+      <Route path="/" exact>
+        <AddressMainBody/>
+        </Route> 
+        <Route path="/insert" component={AddressInput} exact >  
+        <AddressInput/>
+        </Route>
+        <Route path="/list" component={AddressList} >
+        <AddressList/>
+        </Route>
+      </AddressMain>
+      {/*   <Route path="/" exact>
+        <AddressMain form={<AddressMainBody/>}/> 
+        
+          <Route path="/insert" component={AddressInput} exact >
+            <AddressMain form={<AddressInput/>}/>
+          </Route>
+          <Route path="/list" component={AddressList} >
+          <AddressMain form={<AddressList/>}/>
+        </Route>
+        {/* </AddressMain>  */}
+        {/* </Route>      */}
       </div>
  
     </BrowserRouter>

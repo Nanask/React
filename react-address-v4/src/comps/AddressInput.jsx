@@ -1,6 +1,7 @@
 import React from 'react'
 import { useAddressContext } from '../context/AppContextProvider'
 import "../css/input.css"
+import "../css/layout.css"
 import { MyButton } from './MyButton'
 
 export const AddressInput = () => {
@@ -25,9 +26,9 @@ export const AddressInput = () => {
 				<label>나이</label>
 				<input name="a_age" onChange={onChange}/>
 			</div>
-			{/* <MyButton>이야야야</MyButton> */}
+			{/* <MyButton onClick={() => alert("저장")}>이야야야</MyButton> */}
 			<div>
-			<button onClick={onSaveClick} className="btn_save">저장</button>
+			<button onClick={onSaveClick} className="btn_save">Insert</button>
 			</div>
 		</div>
 	)

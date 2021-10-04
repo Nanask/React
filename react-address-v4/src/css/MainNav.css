@@ -13,4 +13,15 @@
 ul.main_nav li {
 	padding: 1rem;
 	margin: 10px;
+
 }
+
+ul.main_nav a {
+	color: inherit;
+}
+
+ul.main_nav a:hover {
+	
+	border-bottom: 2px solid white;
+}
+
