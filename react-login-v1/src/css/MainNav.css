@@ -1,0 +1,17 @@
+.main_nav {
+  display: flex;
+  background-color: #ddd;
+  padding: 1rem;
+  color: black;
+}
+
+.main_nav a {
+  list-style: none;
+  margin: 10px;
+  font-weight: bold;
+  color: inherit;
+}
+
+/* .main_nav li:nth-child(3) {
+  margin-right: auto;
+} */
