@@ -4,6 +4,7 @@ import { LoginForm } from "./comps/LoginForm";
 import { Route } from "react-router-dom";
 import { MainNav } from "./comps/MainNav";
 import { JoinForm } from "./comps/JoinForm";
+import UserContextProvider from "./context/UserContextProvider";
 
 // 네비게이션 항목을 props로 받아오기
 function App() {
@@ -30,14 +31,16 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
-      <MainNav navList={navList}>
-        <Route path="/login" exact>
-          <LoginForm />
-        </Route>
-        <Route path="/join" exact>
-          <JoinForm />
-        </Route>
-      </MainNav>
+      <UserContextProvider>
+        <MainNav navList={navList}>
+          <Route path="/login" exact>
+            <LoginForm />
+          </Route>
+          <Route path="/join" exact>
+            <JoinForm />
+          </Route>
+        </MainNav>
+      </UserContextProvider>
     </div>
   );
 }
