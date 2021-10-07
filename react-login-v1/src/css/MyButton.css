@@ -1,0 +1,16 @@
+button.myButton {
+  font-size: 18px;
+  font-weight: 700;
+  width: 60%;
+  height: 50px;
+  line-height: 50px;
+  margin: 10px auto;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+}
+
+/* height와 line-height를 같이 맞추면 글자가 중앙에 배치가 된다 , 좌우배치는 text-aline을 사용하면 된다*/

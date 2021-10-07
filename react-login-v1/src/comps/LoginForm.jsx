@@ -2,6 +2,8 @@ import React from "react";
 import "../css/login.css";
 import { useState } from "react";
 import { useUserContext } from "../context/UserContextProvider";
+import { MyButton } from "./MyButton";
+import { useHistory } from "react-router";
 
 export const LoginForm = () => {
   const { setUser } = useUserContext();
@@ -10,6 +12,8 @@ export const LoginForm = () => {
     userid: "",
     password: "",
   });
+
+  const history = useHistory();
 
   const onChange = (e) => {
     setAccount({ ...account, [e.target.name]: e.target.value });
@@ -78,6 +82,7 @@ export const LoginForm = () => {
       // 넘어온 데이터를 setting 해주기
       alert("로그인성공");
       setUser(resultUser);
+      history.replace("/");
     }
   };
   return (
@@ -89,7 +94,10 @@ export const LoginForm = () => {
         <input name="password" onChange={onChange} name="password" type="password" placeholder="비밀번호를 입력해주세요" />
       </div>
       <div>
-        <button onClick={onInsert}>로그인</button>
+        <MyButton onClick={onInsert} backgroundColor="">
+          로그인
+        </MyButton>
+        {/* <button onClick={onInsert}>로그인</button> */}
         {/* <button onClick={Join}>회원가입</button> */}
       </div>
     </div>

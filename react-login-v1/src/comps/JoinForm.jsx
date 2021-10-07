@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../css/Join.css";
 
 import { useUserContext } from "../context/UserContextProvider";
+import { MyButton } from "./MyButton";
 
 export const JoinForm = () => {
   // const { user, setUser } = useUserContext();
@@ -131,7 +132,10 @@ export const JoinForm = () => {
       <input onChange={onChangeAccount} name="password" type="jpassword" value={joinUser.password} placeholder="비밀번호를 입력해주세요" />
       <input onChange={onChangeAccount} name="re_password" type="password" value={joinUser.re_password} placeholder="비밀번호를 한번 더 입력해주세요" />
       <input onChange={onChangeAccount} name="email" type="email" value={joinUser.email} placeholder="E_mail을 입력해주세요" />
-      <button onClick={onSubmintAccount}>회원가입</button>
+      <MyButton onClick={onSubmintAccount} backgroundColor="green">
+        회원가입
+      </MyButton>
+      {/* <button onClick={onSubmintAccount}>회원가입</button> */}
     </div>
   );
 };
