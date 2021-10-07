@@ -3,8 +3,7 @@ import "./App.css";
 import TodoInput from "./comps/TodoInput";
 import TodoMain from "./comps/TodoMain";
 import TodoList from "./comps/TodoList";
-import MyButton from "./comps/MyButton";
-import compButton from "./comps/compButton";
+import { LoginForm } from "./comps/LoginForm";
 
 function App() {
   return (
@@ -15,8 +14,9 @@ function App() {
       <TodoMain header="To Do List" form={<TodoInput />}>
         <TodoList />
       </TodoMain>
-      <MyButton />
-      <compButton>룰루</compButton>
+      <TodoMain>
+        <LoginForm />
+      </TodoMain>
     </div>
   );
 }

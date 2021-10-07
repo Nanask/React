@@ -1,0 +1,26 @@
+.login_box {
+  margin: 15px auto;
+  /* background-color: yellow; */
+}
+
+.login_box input,
+.login_box button {
+  outline: none;
+  border: none;
+}
+
+.login_box input {
+  border: 1px solid #ddd;
+  width: 50vh;
+  margin: 5px;
+  padding: 10px;
+  height: 5vh;
+}
+
+.login_box button {
+  width: 50vh;
+  margin: 10px;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
