@@ -27,8 +27,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <BrowserRouter>
-        <MainNav navList={navList} />
-        <TodoMain header="To Do List" form={<TodoInput />}>
+        <TodoMain header="To Do List" nav={<MainNav navList={navList}/>}  form={<TodoInput />}>
+        
           <TodoList />
         </TodoMain>
         {/* <button onClick={loginButton}>로그인</button> */}
