@@ -27,16 +27,16 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <BrowserRouter>
-        <TodoMain header="To Do List" nav={<MainNav navList={navList}/>}  form={<TodoInput />}>
-        
+        <TodoMain header="To Do List"   form={<TodoInput />}>
+        <MainNav navList={navList} />
           <TodoList />
         </TodoMain>
         {/* <button onClick={loginButton}>로그인</button> */}
         {/* <Route path="/login" component={LoginForm} /> */}
-        <TodoMain button={<LoginForm />} />
-        {/* <TodoMain>
+        {/* <TodoMain button={<LoginForm />} /> */}
+        <TodoMain>
         <LoginForm />
-      </TodoMain> */}
+      </TodoMain>
       </BrowserRouter>
     </div>
   );
