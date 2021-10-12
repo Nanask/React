@@ -1,7 +1,28 @@
 import React from "react";
-import { BrowserRouter, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useUserContext } from "../context/UserContextProvider";
 
-export const MainNav = ({ navList, children }) => {
+export const MainNav = () => {
+  const { user } = useUserContext();
+  console.log("user", user);
+  const navList = [
+    {
+      id: 1,
+      title: "Home",
+      link: "/",
+    },
+    user?.userid
+      ? {
+          id: 2,
+          title: "Logout",
+          link: "/logout",
+        }
+      : {
+          id: 2,
+          title: "Login",
+          link: "/login",
+        },
+  ];
   const nav_item = navList.map((item) => {
     return (
       <li>
@@ -9,10 +30,5 @@ export const MainNav = ({ navList, children }) => {
       </li>
     );
   });
-  return (
-    <BrowserRouter>
-      <ul>{nav_item}</ul>
-      {children}
-    </BrowserRouter>
-  );
+  return <ul>{nav_item}</ul>;
 };

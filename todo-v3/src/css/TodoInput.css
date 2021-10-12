@@ -9,7 +9,7 @@
   border-bottom: 1px solid #ddd;
 }
 
-.btn_insert {
+.rainbow {
   padding: 0.5rem 1rem 0.5rem 1rem;
   /* padding: 0.5rem 1rem; */
   margin-left: 1rem;
@@ -20,6 +20,41 @@
   cursor: pointer;
 }
 
-.btn_insert:hover {
+/* .btn_insert:hover {
   background-color: #3bc9db;
+} */
+
+
+.rainbow {
+  background-color: #22b8cf;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  padding: 7px 30px;
+}
+
+.rainbow:hover {
+  background-image: linear-gradient(
+    to right,
+    #e7484f,
+    #e7484f 16.65%,
+    #f68b1d 16.65%,
+    #f68b1d 33.3%,
+    #fced00 33.3%,
+    #fced00 49.95%,
+    #009e4f 49.95%,
+    #009e4f 66.6%,
+    #00aac3 66.6%,
+    #00aac3 83.25%,
+    #732982 83.25%,
+    #732982 100%,
+    #e7484f 100%
+  );
+  animation: slidebg 3s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
 }

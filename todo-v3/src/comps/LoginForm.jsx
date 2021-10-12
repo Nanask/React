@@ -1,34 +1,24 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router";
+import { useUserContext } from "../context/UserContextProvider";
 import "../css/Login.css";
+import { fetchLogin } from "../modules/fetchModule";
 
 export const LoginForm = () => {
+  const { user, setUser } = useUserContext();
   const [account, setAccount] = useState({
     userid: "",
     password: "",
   });
 
+  const history = useHistory();
+
   const onLogin = async (e) => {
-    const res = await fetch("http://localhost:8080/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:3000",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        userid: account.userid,
-        password: account.password,
-      }),
-    });
-    if (res?.ok) {
-      console.log(res);
-      const result = res.json();
-      //   alert(JSON.stringify(result));
-      console.log("json", result);
-      return result;
-    } else {
-      console.log("실패?");
-    }
+    const { userid, password } = account;
+    const resultUser = await fetchLogin(userid, password);
+    await setUser(resultUser);
+    console.log("user좀보자", resultUser);
+    history.replace("/");
   };
 
   const onChange = (e) => {
@@ -46,8 +36,10 @@ export const LoginForm = () => {
   return (
     <div className="login_form">
       <input name="userid" onChange={onChange} placeholder="ID" />
-      <input name="password" onChange={onChange} placeholder="PASSWORD" />
-      <button onClick={onLogin}>Login</button>
+      <input type="password" name="password" onChange={onChange} placeholder="PASSWORD" />
+      <div>
+        <button onClick={onLogin}>Login</button>
+      </div>
     </div>
   );
 };

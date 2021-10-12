@@ -1,6 +1,8 @@
 import { createContext, useContext } from "react";
 import { useState } from "react";
 import { useRef } from "react";
+import { useHistory } from "react-router";
+import { useUserContext } from "./UserContextProvider";
 
 // 컴텍스트 생성
 const AppContext = createContext();
@@ -37,6 +39,10 @@ const AppContextProvider = ({ children }) => {
       t_comp: false,
     },
   ]);
+
+  const { user, setUser } = useUserContext();
+
+  const history = useHistory();
 
   const [todoList, setTodoList] = useState([]);
 
@@ -86,6 +92,10 @@ const AppContextProvider = ({ children }) => {
     // } else {
     //   todoInsert();
     // }
+    if (!user.userid) {
+      alert("로그인이 필요합니다");
+      history.replace("/login");
+    }
     todoText();
   };
   const onDeleteClick = (e) => {
