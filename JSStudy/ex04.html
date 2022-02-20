@@ -1,0 +1,39 @@
+<script>
+  function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+  }
+  console.log(`"2020년은 윤년?" === ${isLeapYear(2020)}`);
+  console.log(`"2010년은 윤년?" === ${isLeapYear(2010)}`);
+  console.log(`"2000년은 윤년?" === ${isLeapYear(2000)}`);
+  console.log(`"2014년은 윤년?" === ${isLeapYear(2014)}`);
+</script>
+<script>
+  function isLeapYear(year) {
+    return year % 4 === 0 || (year % 400 === 0 && year % 100 !== 0);
+  }
+  console.log(`"2020년은 윤년?" === ${isLeapYear(2020)}`);
+  console.log(`"2010년은 윤년?" === ${isLeapYear(2010)}`);
+  console.log(`"2000년은 윤년?" === ${isLeapYear(2000)}`);
+  console.log(`"2014년은 윤년?" === ${isLeapYear(2014)}`);
+</script>
+<script>
+  let numbers = [273, 25, 75, 52, 103, 32, 57, 24, 76];
+
+  const numberCheck = numbers.filter((number) => {
+    return number % 2 !== 0 && number <= 100 && number % 5 === 0;
+  });
+  console.log(numberCheck);
+
+  numbers = numbers.filter((number) => {
+    return number % 2 !== 0 && number <= 100 && number % 5 === 0;
+  });
+  console.log(numbers);
+</script>
+<!-- <script>
+  let numbers = [273, 25, 75, 52, 103, 32, 57, 24, 76];
+
+  numbers = numbers.filter((number) => {
+    return number % 2 !== 0 && number < 100 && number % 5 === 0;
+  });
+  console.log(numbers);
+</script> -->
